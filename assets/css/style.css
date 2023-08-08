@@ -1,0 +1,125 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body
+{
+    background-image: url(../images/desktop/desktopDaytime.png);
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center;
+    font-family: 'Inter', sans-serif;
+    background-color: #000;
+}
+
+body, 
+html 
+{
+    height: 100%;
+}
+  
+.bg
+{
+    position: relative;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    fill: #000;
+
+
+}
+
+.bg_img
+{
+    position: absolute;
+    opacity: 0.6;
+    max-width: 1440px;
+    max-height: 800px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+
+main
+{
+    
+    width: 1110px;
+    height: 800px;
+}
+
+
+.top,
+.bottom
+{
+    display: flex;
+    width: 100%;
+    height: 50%;
+}
+
+.phrase
+{
+    margin-top: 57px;
+    width: 540px;
+    color: var(--daytime-white);
+}
+
+.phrase p
+{
+    margin-top: 13px;
+}
+
+.refresh_btn
+{
+    margin-top: 66px;
+    margin-left: 15px;
+    opacity: 0.5;
+    fill: #fff;
+    height: fit-content;
+}
+
+.refresh_btn svg
+{
+    cursor: pointer;
+}
+
+
+.greeting
+{
+    display: flex;
+    margin-top: 14px;
+}
+
+.greeting_content
+{
+    color: var(--daytime-white);
+    margin-left: 17px;
+}
+
+.hour
+{
+    color: var(--daytime-white);
+    margin-top: 16px;
+}
+
+.time_zone
+{
+    margin-left: 13px;
+    color: var(--daytime-white);
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 28px; /* 70% */
+    text-transform: uppercase;
+}
+
+.location
+{
+    margin-top: 17px;
+    color: var(--daytime-white);
+}
