@@ -25,30 +25,45 @@ html
 {
     height: 800px;
     width: 1440px;
-    background-image: url(../images/desktop/bg-image-daytime_expand.png);
+    /* background-image: url(../images/desktop/bg-image-daytime_expand.png); */
+    background-image: url(../images/desktop/desktopDaytime.png);
     background-repeat: no-repeat;
     background-size: auto;
     background-position-x: center;
     background-position-y: center;
+    overflow: hidden;
+}
+.top,
+.bottom,
+.expand
+{
+
     padding-left: 165px;
     padding-right: 165px;
 }
+
 
 .top,
 .bottom
 {
     display: flex;
     width: 100%;
-    height: 50%;
 }
 
 .top
 {
-    height: 0;
+    height: 50%;
+    transition: height 0.3s;
+}
+
+.bottom
+{
+    height: 50%;
 }
 
 .bottom_container
 {
+    display: flex;
     width: 100%;
 }
 
@@ -141,7 +156,6 @@ html
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 0.3;
     width: 146px;
     height: 56px;
     border-radius: 28px;
@@ -153,6 +167,13 @@ html
     letter-spacing: 5px;
     text-transform: uppercase;
     cursor: pointer;
+}
+
+.more_btn:hover,
+.more_btn:hover svg circle
+{
+    color: #999;
+    fill: #999;
 }
 
 .more_btn span
@@ -167,34 +188,36 @@ html
     display: flex;
     align-items: center;
     width: 100%;
-    height: 50%;
+    height: 0;
     background: rgba(255, 255, 255, 0.75);
     backdrop-filter: blur(20.387113571166992px);
+    transition: height 0.3s;
 }
 
 .expand_container
 {
     width: 100%;
     height: 252px;
-    display: flex;
+    display: none;
+    transition: opacity 0.4s;
 }
 
 .expand_left
 {
-    flex: 1;
-    border-right: 1px solid var(--nighttime-white);
+    width: 571px;
+    border-right: 1px solid rgba(48, 48, 48, 0.3);
 }
 
 .expand_right
 {
-
     flex: 1;
+    padding-left: 94px;
 }
 
 
 .expand_title
 {
-    color: var(nighttime-white);
+    color: var(--nighttime-white);
     font-size: 15px;
     font-style: normal;
     font-weight: 400;
@@ -206,7 +229,7 @@ html
 
 .expand_content
 {
-    color: var(nighttime-white);
+    color: var(--nighttime-white);
     font-size: 56px;
     font-style: normal;
     font-weight: 700;
