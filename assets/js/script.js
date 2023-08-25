@@ -7,20 +7,26 @@ moreLess_btn.addEventListener('click', () => {
     
     if(moreLess_btn.innerText == "MORE")
     {
-        expandSection.children[0].style.display = "flex"
+
+        setTimeout(() => {
+            expandSection.children[0].style.opacity = "1";
+        }, 500);
+        setTimeout(() => {
+            expandSection.children[0].style.display = "flex"
+        }, 200);
+                
         topSection.style.height = "0";
         moreLess_btn.children[0].innerText = "LESS";
         moreLess_btn.children[1].children[1].setAttribute('d', 'M14 23L20 17L26 23');
         expandSection.style.height = "50%";
         setTimeout(() => {
+            
             bottomContainer.style.alignItems = "center";
         }, 100);
         
         
-        setTimeout(() => {
-            expandSection.children[0].style.opacity = "1";
             
-        }, 300);
+        
 
     }
     else if(moreLess_btn.innerText == "LESS")
