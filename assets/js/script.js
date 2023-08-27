@@ -48,3 +48,61 @@ moreLess_btn.addEventListener('click', () => {
     }
 });
 
+
+let countryName = document.querySelector('#country');
+let cityName = document.querySelector('#city');
+let timeHour = document.querySelector('#time');
+let timeZone = document.querySelector('#timeZone');
+function getIp()
+{
+    fetch('http://worldtimeapi.org/api/ip')
+      .then(function(result){
+          return result.json();
+      })
+
+      .then(function(json){
+        console.log(json);
+      });
+}
+
+
+function getIp2()
+{
+    fetch('https://api.ipbase.com/v2/info?apikey=ipb_live_u7KFHDWIjVJHZhzfT59jeMq45fxFtOkKWpltKWes')
+      .then(function(result){
+          return result.json();
+      })
+
+      .then(function(json){
+        console.log(json.data.location);
+
+        
+        countryName.innerText = json.data.location.country.name
+        cityName.innerText = json.data.location.city.name
+      });
+}
+
+
+
+function getIp3()
+{
+    fetch('https://ipgeolocation.abstractapi.com/v1/?api_key=a62a35cf794a4573a4012f6b5f68172f')
+      .then(function(result){
+          return result.json();
+      })
+
+      .then(function(json){
+        console.log(json);
+        console.log(json.region);
+
+        timeHour.innerText = json.timezone.current_time.substring(0,5);
+        timeZone.innerText = json.timezone.gmt_offset;
+        countryName.innerText = json.country;
+        cityName.innerText = json.region;
+      });
+}
+
+
+
+
+getIp3()
