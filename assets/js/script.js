@@ -4,17 +4,15 @@ let bottomContainer = document.querySelector('.bottom_container');
 let expandSection = document.querySelector('.expand');
 
 moreLess_btn.addEventListener('click', () => {
-    
     if(moreLess_btn.innerText == "MORE")
     {
+        expandSection.children[0].style.display = "flex"
+        expandSection.children[0].style.opacity = "0";
 
         setTimeout(() => {
             expandSection.children[0].style.opacity = "1";
-        }, 500);
-        setTimeout(() => {
-            expandSection.children[0].style.display = "flex"
-        }, 200);
-                
+        }, 300);
+
         topSection.style.height = "0";
         moreLess_btn.children[0].innerText = "LESS";
         moreLess_btn.children[1].children[1].setAttribute('d', 'M14 23L20 17L26 23');
